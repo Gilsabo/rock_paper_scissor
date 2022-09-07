@@ -1,11 +1,20 @@
 let x = 'helloworld';
 console.log(x);
 
-let computerOptions = ['rock','paper','scissor'];
+let rockPaperScissorarray = ['rock','paper','scissor'];
 
-let getComputerChoice =  Math.floor(Math.random() * computerOptions.length);
+function getComputerChoice (){
+console.log( rockPaperScissorarray[ (Math.floor(Math.random() * rockPaperScissorarray.length))]);
+    
+}  
 
-let computerPlay = computerOptions[getComputerChoice];
+getComputerChoice();
 
-console.log (computerPlay);
+
+function playRound (playerSelection, computerPlay){
+
+
+
+
+}
 
