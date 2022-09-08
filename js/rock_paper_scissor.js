@@ -10,7 +10,7 @@ return ( rockPaperScissorarray[ (Math.floor(Math.random() * rockPaperScissorarra
 
 const computerSelection = getComputerChoice();
 
-const playerSelection = 'rock';
+const playerSelection = 'paper';
 
 
 function playRound (playerSelection, computerSelection){
@@ -31,4 +31,33 @@ function playRound (playerSelection, computerSelection){
     return 'tie, it is getting tight in here';
     }
 }
-console.log(playRound(playerSelection, computerSelection));
+
+
+let playerScore = 0;
+let computerScore = 0;
+
+
+function game(){
+    for ( let i = 0; i < 5; i++ ) {
+        const computerSelection = getComputerChoice();
+        playRound (playerSelection, computerSelection);
+        console.log(playRound (playerSelection, computerSelection))
+
+    }
+    
+}
+        
+        
+                
+             
+console.log(game());
+
+            
+
+
+/*if(console.log(playerSelection, computerSelection)==='You win, rock beats scissor'||'You win, scissor beats paper'||'You win, paper beats scissor'){
+    console.log('human '+playerScore++ + 'computer' + computerScore);
+}else if(console.log(playerSelection, computerSelection)==='You lose, paper beats rock'||'You lose, rock beats scissor'||'You lose, scissor beats paper'){
+    console.log('human '+playerScore + 'computer' + computerScore++);
+}else{
+    console.log('human '+ playerScore + 'computer' + computerScore);*/
