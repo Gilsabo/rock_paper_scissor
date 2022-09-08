@@ -9,7 +9,7 @@ return ( rockPaperScissorarray[ (Math.floor(Math.random() * rockPaperScissorarra
 
 const computerSelection = getComputerChoice();
 
-const playerSelection = 'paper';
+const playerSelection = 'rock';
 
 
 function playRound (playerSelection, computerSelection){
@@ -39,7 +39,9 @@ function game(){
     for ( let i = 0; i < 5; i++ ) {
         const computerSelection = getComputerChoice();
         playRound (playerSelection, computerSelection);
+        
         if (playerSelection == 'rock' && computerSelection == 'scissor'){
+            console.log(playRound (playerSelection, computerSelection))
             console.log('human '+ ++playerScore + ' computer ' + computerScore);
             }else if(playerSelection == 'scissor' && computerSelection == 'paper'){
                 console.log(playRound (playerSelection, computerSelection))
