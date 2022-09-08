@@ -1,6 +1,6 @@
 
 
-let rockPaperScissorarray = ['rock','paper','scissor'];
+let rockPaperScissorarray = ['rock','paper','scissor']; 
 
 function getComputerChoice (){
 return ( rockPaperScissorarray[ (Math.floor(Math.random() * rockPaperScissorarray.length))]);
@@ -40,26 +40,28 @@ function game(){
         const computerSelection = getComputerChoice();
         playRound (playerSelection, computerSelection);
         if (playerSelection == 'rock' && computerSelection == 'scissor'){
-            console.log('human '+ ++playerScore + 'computer' + computerScore);
+            console.log('human '+ ++playerScore + ' computer ' + computerScore);
             }else if(playerSelection == 'scissor' && computerSelection == 'paper'){
                 console.log(playRound (playerSelection, computerSelection))
-                console.log('human '+ ++playerScore + 'computer' + computerScore);
+                console.log('human '+ ++playerScore + ' computer ' + computerScore);
             }else if(playerSelection == 'paper' && computerSelection == 'rock'){
                 console.log(playRound (playerSelection, computerSelection))
-                console.log('human '+ ++playerScore + 'computer' + computerScore);
+                console.log('human '+ ++playerScore + ' computer ' + computerScore);
             }else if(playerSelection == 'rock' && computerSelection == 'paper'){
                 console.log(playRound (playerSelection, computerSelection))
-                console.log('human '+playerScore + 'computer' + ++computerScore);
+                console.log('human '+playerScore + ' computer ' + ++computerScore);
             }else if(playerSelection == 'scissor' && computerSelection == 'rock'){
                 console.log(playRound (playerSelection, computerSelection))
-                console.log('human '+playerScore + 'computer' + ++computerScore);
+                console.log('human '+playerScore + ' computer ' + ++computerScore);
             }else if(playerSelection == 'paper' && computerSelection == 'scissor'){
                 console.log(playRound (playerSelection, computerSelection))
-                console.log('human '+playerScore + 'computer' + ++computerScore);
-             }else {
+                console.log('human '+ playerScore + ' computer ' + ++computerScore);
+             }else if(playerSelection === computerSelection){
                 console.log(playRound (playerSelection, computerSelection))
-                console.log('human '+ playerScore + 'computer' + computerScore);
+                console.log('human '+ playerScore + ' computer ' + computerScore);
+             {
             }
+        }
        
         }
         if (playerScore > computerScore ){
@@ -70,6 +72,7 @@ function game(){
             console.log('draw, let\'s play revange');
         }
     }
+    
     
         
     
