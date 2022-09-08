@@ -9,7 +9,7 @@ return ( rockPaperScissorarray[ (Math.floor(Math.random() * rockPaperScissorarra
 
 const computerSelection = getComputerChoice();
 
-const playerSelection = 'rock';
+const playerSelection = prompt('chose your weapon: rock, paper, scissor', 'type your weapon').toLowerCase();
 
 
 function playRound (playerSelection, computerSelection){
@@ -40,9 +40,9 @@ function game(){
         const computerSelection = getComputerChoice();
         playRound (playerSelection, computerSelection);
         
-        if (playerSelection == 'rock' && computerSelection == 'scissor'){
-            console.log(playRound (playerSelection, computerSelection))
-            console.log('human '+ ++playerScore + ' computer ' + computerScore);
+            if (playerSelection == 'rock' && computerSelection == 'scissor'){
+                console.log(playRound (playerSelection, computerSelection))
+                console.log('human '+ ++playerScore + ' computer ' + computerScore);
             }else if(playerSelection == 'scissor' && computerSelection == 'paper'){
                 console.log(playRound (playerSelection, computerSelection))
                 console.log('human '+ ++playerScore + ' computer ' + computerScore);
