@@ -1,15 +1,29 @@
 
-
 let rockPaperScissorarray = ['rock','paper','scissor']; 
 
 function getComputerChoice (){
 return ( rockPaperScissorarray[ (Math.floor(Math.random() * rockPaperScissorarray.length))]);
-    
 }  
 
 const computerSelection = getComputerChoice();
 
-const playerSelection = prompt('chose your weapon: rock, paper, scissor', 'type your weapon').toLowerCase();
+const playerSelectionRock = document.querySelector('.button1');
+playerSelectionRock.addEventListener('click', function() {
+    const computerSelection = getComputerChoice();
+    document.getElementById('result').innerText = playRound('rock', computerSelection);
+  });
+    
+const playerSelectionScissor = document.querySelector('.button2');
+playerSelectionScissor.addEventListener('click', function(){
+    const computerSelection = getComputerChoice();
+    document.getElementById('result').innerText = playRound('scissor',computerSelection);
+  });
+
+const playerSelectionPaper = document.querySelector('.button3');
+playerSelectionPaper.addEventListener('click', function(){
+    const computerSelection = getComputerChoice();
+    document.getElementById('result').innerText = playRound('paper',computerSelection);
+  });
 
 
 function playRound (playerSelection, computerSelection){
@@ -35,8 +49,8 @@ let playerScore = 0;
 let computerScore = 0;
 
 
-function game(){
-    for ( let i = 0; i < 5; i++ ) {
+/*function game(){
+    
         const computerSelection = getComputerChoice();
         playRound (playerSelection, computerSelection);
         
@@ -76,7 +90,7 @@ function game(){
     }
     
              
-console.log(game());
+console.log(game());*/
 
             
 
