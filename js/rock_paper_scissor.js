@@ -1,5 +1,7 @@
 
 let rockPaperScissorarray = ['rock','paper','scissor']; 
+let playerScore = 0;
+let computerScore = 0
 
 function getComputerChoice (){
 return ( rockPaperScissorarray[ (Math.floor(Math.random() * rockPaperScissorarray.length))]);
@@ -11,20 +13,54 @@ const playerSelectionRock = document.querySelector('.button1');
 playerSelectionRock.addEventListener('click', function() {
     const computerSelection = getComputerChoice();
     document.getElementById('result').innerText = playRound('rock', computerSelection);
+    document.getElementById('score').innerText = score('rock', computerSelection);
+    document.getElementById('checkWinner').innerText = checkWinner(playerScore, computerScore);
   });
     
 const playerSelectionScissor = document.querySelector('.button2');
 playerSelectionScissor.addEventListener('click', function(){
     const computerSelection = getComputerChoice();
     document.getElementById('result').innerText = playRound('scissor',computerSelection);
+    document.getElementById('score').innerText = score('scissor', computerSelection);
   });
 
 const playerSelectionPaper = document.querySelector('.button3');
 playerSelectionPaper.addEventListener('click', function(){
     const computerSelection = getComputerChoice();
     document.getElementById('result').innerText = playRound('paper',computerSelection);
+    document.getElementById('score').innerText = score('paper', computerSelection);
   });
 
+  
+ function score(playerSelection, computerSelection ){
+    ;
+ if (playerSelection == 'rock' && computerSelection == 'scissor'){
+     return  'human '+ ++playerScore + ' computer ' + computerScore;
+}else if(playerSelection == 'scissor' && computerSelection == 'paper'){
+     return 'human '+ ++playerScore + ' computer ' + computerScore;;
+}else if(playerSelection == 'paper' && computerSelection == 'rock'){
+     return ('human '+ ++playerScore + ' computer ' + computerScore);
+}else if(playerSelection == 'rock' && computerSelection == 'paper'){
+     return ('human '+playerScore + ' computer ' + ++computerScore);
+}else if(playerSelection == 'scissor' && computerSelection == 'rock'){
+     return ('human '+playerScore + ' computer ' + ++computerScore);
+}else if(playerSelection == 'paper' && computerSelection == 'scissor'){
+     return ('human '+ playerScore + ' computer ' + ++computerScore);
+ }else if(playerSelection === computerSelection){
+     return('human '+ playerScore + ' computer ' + computerScore);
+ }
+ 
+}
+
+
+function checkWinner(playerScore, computerScore){
+    if (playerScore == 5 ){
+    return'human wins';
+    }else if(computerScore == 5){
+    return'computer wins';
+    }else
+    return '';
+}
 
 function playRound (playerSelection, computerSelection){
     
@@ -45,8 +81,7 @@ function playRound (playerSelection, computerSelection){
     }
 }
 
-let playerScore = 0;
-let computerScore = 0;
+
 
 
 /*function game(){
@@ -91,7 +126,4 @@ let computerScore = 0;
     
              
 console.log(game());*/
-
-            
-
 
