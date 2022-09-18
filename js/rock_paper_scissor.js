@@ -22,6 +22,7 @@ playerSelectionScissor.addEventListener('click', function(){
     const computerSelection = getComputerChoice();
     document.getElementById('result').innerText = playRound('scissor',computerSelection);
     document.getElementById('score').innerText = score('scissor', computerSelection);
+    document.getElementById('checkWinner').innerText = checkWinner(playerScore, computerScore);
   });
 
 const playerSelectionPaper = document.querySelector('.button3');
@@ -29,6 +30,7 @@ playerSelectionPaper.addEventListener('click', function(){
     const computerSelection = getComputerChoice();
     document.getElementById('result').innerText = playRound('paper',computerSelection);
     document.getElementById('score').innerText = score('paper', computerSelection);
+    document.getElementById('checkWinner').innerText = checkWinner(playerScore, computerScore);
   });
 
   
@@ -56,6 +58,7 @@ playerSelectionPaper.addEventListener('click', function(){
 function checkWinner(playerScore, computerScore){
     if (playerScore == 5 ){
     return'human wins';
+    //toggle?
     }else if(computerScore == 5){
     return'computer wins';
     }else
