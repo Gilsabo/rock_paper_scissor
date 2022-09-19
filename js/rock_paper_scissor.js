@@ -3,13 +3,11 @@ let rockPaperScissorarray = ['rock','paper','scissor'];
 let playerScore = 0;
 let computerScore = 0
 
-
 function getComputerChoice (){
 return ( rockPaperScissorarray[ (Math.floor(Math.random() * rockPaperScissorarray.length))]);
 }  
 
 const computerSelection = getComputerChoice();
-
 
 const playerSelectionRock = document.querySelector('.button1');
 playerSelectionRock.addEventListener('click', function() {
