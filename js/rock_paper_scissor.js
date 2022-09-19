@@ -3,11 +3,13 @@ let rockPaperScissorarray = ['rock','paper','scissor'];
 let playerScore = 0;
 let computerScore = 0
 
+
 function getComputerChoice (){
 return ( rockPaperScissorarray[ (Math.floor(Math.random() * rockPaperScissorarray.length))]);
 }  
 
 const computerSelection = getComputerChoice();
+
 
 const playerSelectionRock = document.querySelector('.button1');
 playerSelectionRock.addEventListener('click', function() {
@@ -54,7 +56,6 @@ playerSelectionPaper.addEventListener('click', function(){
  
 }
 
-
 function checkWinner(playerScore, computerScore){
     if (playerScore == 5 ){
     return'human wins';
@@ -85,38 +86,35 @@ function playRound (playerSelection, computerSelection){
 }
 
 
-
+///----this is a function to run the game the best of 5 authomatically without the buttons
 
 /*function game(){
-    
-        const computerSelection = getComputerChoice();
-        playRound (playerSelection, computerSelection);
-        
-            if (playerSelection == 'rock' && computerSelection == 'scissor'){
-                console.log(playRound (playerSelection, computerSelection))
-                console.log('human '+ ++playerScore + ' computer ' + computerScore);
-            }else if(playerSelection == 'scissor' && computerSelection == 'paper'){
-                console.log(playRound (playerSelection, computerSelection))
-                console.log('human '+ ++playerScore + ' computer ' + computerScore);
-            }else if(playerSelection == 'paper' && computerSelection == 'rock'){
-                console.log(playRound (playerSelection, computerSelection))
-                console.log('human '+ ++playerScore + ' computer ' + computerScore);
-            }else if(playerSelection == 'rock' && computerSelection == 'paper'){
-                console.log(playRound (playerSelection, computerSelection))
-                console.log('human '+playerScore + ' computer ' + ++computerScore);
-            }else if(playerSelection == 'scissor' && computerSelection == 'rock'){
-                console.log(playRound (playerSelection, computerSelection))
-                console.log('human '+playerScore + ' computer ' + ++computerScore);
-            }else if(playerSelection == 'paper' && computerSelection == 'scissor'){
-                console.log(playRound (playerSelection, computerSelection))
-                console.log('human '+ playerScore + ' computer ' + ++computerScore);
-             }else if(playerSelection === computerSelection){
-                console.log(playRound (playerSelection, computerSelection))
-                console.log('human '+ playerScore + ' computer ' + computerScore);
+    const computerSelection = getComputerChoice();
+    playRound (playerSelection, computerSelection);
+        if (playerSelection == 'rock' && computerSelection == 'scissor'){
+            console.log(playRound (playerSelection, computerSelection))
+            console.log('human '+ ++playerScore + ' computer ' + computerScore);
+        }else if(playerSelection == 'scissor' && computerSelection == 'paper'){
+            console.log(playRound (playerSelection, computerSelection))
+            console.log('human '+ ++playerScore + ' computer ' + computerScore);
+        }else if(playerSelection == 'paper' && computerSelection == 'rock'){
+            console.log(playRound (playerSelection, computerSelection))
+            console.log('human '+ ++playerScore + ' computer ' + computerScore);
+        }else if(playerSelection == 'rock' && computerSelection == 'paper'){
+            console.log(playRound (playerSelection, computerSelection))
+            console.log('human '+playerScore + ' computer ' + ++computerScore);
+        }else if(playerSelection == 'scissor' && computerSelection == 'rock'){
+            console.log(playRound (playerSelection, computerSelection))
+            console.log('human '+playerScore + ' computer ' + ++computerScore);
+        }else if(playerSelection == 'paper' && computerSelection == 'scissor'){
+            console.log(playRound (playerSelection, computerSelection))
+            console.log('human '+ playerScore + ' computer ' + ++computerScore);
+        }else if(playerSelection === computerSelection){
+            console.log(playRound (playerSelection, computerSelection))
+            console.log('human '+ playerScore + ' computer ' + computerScore);
              {
             }
-        }
-       
+         }
         }
         if (playerScore > computerScore ){
             console.log('human wins');
@@ -126,7 +124,18 @@ function playRound (playerSelection, computerSelection){
             console.log('draw, let\'s play revange');
         }
     }
-    
-             
 console.log(game());*/
 
+///--------- This is a non-finished shorter piece of code to run the game.
+
+/*const buttons =  document.querySelectorAll('.buttons');
+buttons.forEach((button)=> { 
+    button.addEventListener('click', (e)=>{
+        
+        playerSelection = e.target.innerText;
+        computerSelection = getComputerChoice();
+        playRound(playerSelection, computerSelection);
+        score(playerSelection, computerSelection);
+        console.log(checkWinner(playerSelection, computerScore));
+    });
+});*/
